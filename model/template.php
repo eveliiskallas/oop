@@ -85,7 +85,7 @@ class template
         $str = $this->content; // sisu, mis ei ole veel asendatud
         foreach ($this->vars as $name=>$value){
             $str = str_replace('{'.$name.'}', $value, $str);
-            echo $str;
+//            echo $str;
         }
         return $str; // tagastame asendatud sisu
     }
