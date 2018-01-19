@@ -73,4 +73,10 @@ class template
         }
     }
 
+    // $this->vars massiivi täiendamine väärtuste paaritega
+    // kujul 'malli elemendi nimi'=>'reaalne väärtus'
+    function set ($name, $value){
+        $this->vars[$name] = $value;
+    }
+
 }
