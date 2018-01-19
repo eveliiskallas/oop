@@ -7,3 +7,10 @@
  */
 // nõuame konfiguratsiooni faili
 require_once 'conf.php';
+
+$mainTmpl = new template('main');
+
+// väljastame objekti sisu test kujul
+echo'<pre>';
+print_r($mainTmpl);
+echo'</pre>';
