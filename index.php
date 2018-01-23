@@ -15,7 +15,8 @@ $mainTmpl->set('site_title', 'PV');
 $mainTmpl->set('user', 'Kasutaja');
 $mainTmpl->set('title', 'Pealkiri');
 $mainTmpl->set('lang bar', 'Keeleriba');
-$mainTmpl->set('menu', 'Lehe menüü');
+// lisame menüü failist
+require_once 'menu.php';
 $mainTmpl->set('content', 'Lehe sisu');
 // väljastame objekti sisu test kujul
 echo'<pre>';
