@@ -11,11 +11,18 @@ $menuTmpl = new template('menu.menu'); // menüü mall
 $itemTmpl = new template('menu.item'); // menüü elemendi mall
 
 // loome üks menüü element nimega esimene
-
 $itemTmpl->set('name', 'esimene');
 // lisame antud elemendi menüüsse
 $menuItem = $itemTmpl->parsel(); // string, mis sisaldab ühe nimekirja elemendi lingiga
-$menuTmpl->set('menu_items', $menuItem); // nüüd olemas paar 'menu_items'=>'<li>...</li>'
+$menuTmpl->add('menu_items', $menuItem); // nüüd olemas paar 'menu_items'=>'<li>...</li>'
+
+// loome veel ühe menüü element nimega esimene
+$itemTmpl->set('name', 'teine');
+// lisame antud elemendi menüüsse
+$menuItem = $itemTmpl->parsel(); // string, mis sisaldab ühe nimekirja elemendi lingiga
+$menuTmpl->add('menu_items', $menuItem); // nüüd olemas paar 'menu_items'=>'<li>...</li>'
+
+
 
 // ehitame valmis menüü
 $menu = $menuTmpl->parsel();
