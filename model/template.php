@@ -79,6 +79,17 @@ class template
         $this->vars[$name] = $value;
     }
 
+    // $this->vars massiivi täiendamine väärtuste paaritega
+    // kujul 'malli elemendi nimi'=>'reaalne väärtus' siis kui malli elemendi nimi juba eksisteerib
+    // koos eelmise elemendga
+    function add($name, $value){
+        if(!isset($this->vars[$name])){
+            $this->set($name, $value);
+        } else {
+            $this->vars[$name] = $this->vars[$name].$value;
+        }
+    }
+
     // malli elementide asendamine reaalväärtustega
     // vastavalt elementide nimedele
     function parsel(){
