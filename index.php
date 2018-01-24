@@ -18,9 +18,9 @@ $mainTmpl->set('lang bar', 'Keeleriba');
 // lisame menüü failist
 require_once 'menu.php';
 $mainTmpl->set('content', 'Lehe sisu');
-// väljastame objekti sisu test kujul
-echo'<pre>';
-print_r($mainTmpl);
-echo'</pre>';
 // väljastame sisuga täidetud mall
 echo $mainTmpl->parsel();
+// kontrollime $http objekti tööd
+echo '<pre>';
+print_r($http);
+echo '</pre>';
