@@ -31,6 +31,22 @@ class linkobject extends http
             $link = $link.$this->delim;
         }
         $link = $link.fixUrl($name).$this->eq.fixUrl($value);
+    }
 
+    // moodustame valmislink kasutades põhilingi ja
+    // this->addToLink funktsiooni abil valmistatud paarid
+    function getLink($add = array()){
+        $link ='';
+        foreach ($add as $name=>$value){
+            $this->addToLink($link, $name, $value);
+        }
+        if($link !=''){
+            // http://ek.ikt.khk.ee/oop_vs17/index.php?control=login&user=test
+            $link = $this->baseLink.'?'.$link;
+        } else {
+            // http://ek.ikt.khk.ee/oop_vs17/index.php
+            $link = $this->baseLink;
+        }
+        return $link;
     }
 }
