@@ -18,6 +18,7 @@ class http
      */
     public function __construct(){
         $this->init();
+        $this->initConst();
     }
 
 
@@ -27,6 +28,16 @@ class http
         $this->vars = array_merge($_GET, $_POST);
         // serveri andmed
         $this->server = $_SERVER;
+    }
+
+    // vajalike konstantide defineerimine
+    function initConst(){
+        $constNames = array('HTTP_HOST', 'SCRIPT_NAME');
+        foreach ($constNames as $constName){
+            if(!defined($constName) and isset($this->server[$constName])){
+                define($constName, $this->server[$constName]);
+            }
+        }
     }
 
 }
