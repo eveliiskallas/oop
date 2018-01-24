@@ -20,9 +20,6 @@ require_once 'menu.php';
 $mainTmpl->set('content', 'Lehe sisu');
 // väljastame sisuga täidetud mall
 echo $mainTmpl->parsel();
-// kontrollime $http objekti tööd
-echo HTTP_HOST.SCRIPT_NAME.'<br />';
-echo $http->baseLink.'<br />';
-$pairs = array('control'=>'login', 'user'=>'test');
-$link = $http->getLink($pairs);
-echo $link.'<br />';
+// kontrollime $http objekti
+$control = $http->get('control');
+echo $control.'<br />';
