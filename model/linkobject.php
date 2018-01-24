@@ -32,7 +32,5 @@ class linkobject extends http
         }
         $link = $link.$name.$this->eq.$value;
 
-
-
     }
 }
