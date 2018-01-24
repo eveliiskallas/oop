@@ -21,6 +21,4 @@ $mainTmpl->set('content', 'Lehe sisu');
 // väljastame sisuga täidetud mall
 echo $mainTmpl->parsel();
 // kontrollime $http objekti tööd
-echo '<pre>';
-print_r($http);
-echo '</pre>';
+echo HTTP_HOST.SCRIPT_NAME.'<br />';
