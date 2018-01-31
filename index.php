@@ -9,6 +9,8 @@
 require_once 'conf.php';
 
 $mainTmpl = new template('main');
+// kutsume tegevuste/kontrollerite halduse tööle
+require_once 'control.php';
 // reaalväärtuste määramine
 $mainTmpl->set('site_lang', 'et');
 $mainTmpl->set('site_title', 'PV');
