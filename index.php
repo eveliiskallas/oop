@@ -17,7 +17,7 @@ $mainTmpl->set('title', 'Pealkiri');
 $mainTmpl->set('lang bar', 'Keeleriba');
 // lisame menüü failist
 require_once 'menu.php';
-$mainTmpl->set('content', 'Lehe sisu');
+
 // väljastame sisuga täidetud mall
 echo $mainTmpl->parsel();
 // kontrollime $http objekti
