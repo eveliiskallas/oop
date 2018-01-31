@@ -10,6 +10,14 @@
 $menuTmpl = new template('menu.menu'); // menüü mall
 $itemTmpl = new template('menu.item'); // menüü elemendi mall
 
+// loome  ühe menüü element nimega avaleht
+$itemTmpl->set('name', 'avaleht');
+// määrata menüüs väljastava elemendiga seotud link
+// http://ek.ikt.khk.ee/oop_vs17/index.php?control=esimene
+$link = $http->getLink();
+$itemTmpl->set('link', $link);
+$menuTmpl->add('menu_items', $itemTmpl->parsel()); // nüüd olemas paar 'menu_items'=>'<li>...</li>'
+
 // loome üks menüü element nimega esimene
 //määrame menüüs väljastava elemendi nime
 $itemTmpl->set('name', 'esimene');
@@ -30,6 +38,8 @@ $itemTmpl->set('link', $link);
 // lisame antud elemendi menüüsse
 $menuItem = $itemTmpl->parsel(); // string, mis sisaldab ühe nimekirja elemendi lingiga
 $menuTmpl->add('menu_items', $menuItem); // nüüd olemas paar 'menu_items'=>'<li>...</li>'
+
+
 
 
 
