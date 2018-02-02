@@ -14,9 +14,10 @@ $itemTmpl = new template('menu.item'); // menüü elemendi mall
 $itemTmpl->set('name', 'avaleht');
 // määrata menüüs väljastava elemendiga seotud link
 // http://ek.ikt.khk.ee/oop_vs17/index.php?control=esimene
-$link = $http->getLink();
+$link = $http->getLink(array('control'=>'avaleht'));
 $itemTmpl->set('link', $link);
 $menuTmpl->add('menu_items', $itemTmpl->parsel()); // nüüd olemas paar 'menu_items'=>'<li>...</li>'
+// avalehe element on valmis
 
 // loome üks menüü element nimega esimene
 //määrame menüüs väljastava elemendi nime
