@@ -27,6 +27,7 @@ echo '<pre>';
 print_r($http->vars);
 echo '</pre>';
 // kontrollime $db objekti tööd
+$db->query('SELECT NOW()');
 echo '<pre>';
 print_r($db);
 echo '</pre>';
