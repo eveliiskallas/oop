@@ -19,7 +19,8 @@ if($result !=false){
     //suuname pealehele
     $http->redirect();
 } else {
-    //probleem sisselogimisega, suunatakse tagasi sisselogimisvormile
+    //probleem sisselogimisega
+    //suunatakse tagasi sisselogimisvormile
     $link = $http->getLink(array('control'=>'login'));
     $http->redirect($link);
 }
