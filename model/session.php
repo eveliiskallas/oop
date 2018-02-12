@@ -15,6 +15,7 @@ class session
     var $db = false; // otseühendus $db objektiga
 
     var $timeout = 1800; // sessiooni pikkus -30 minutit
+    var $anonymous = true; //kas on lubatud anonüümsuse kasutamine
 
     /**
      * session constructor.
