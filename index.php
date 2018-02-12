@@ -21,7 +21,7 @@ $mainTmpl->set('lang bar', 'Keeleriba');
 require_once 'menu.php';
 
 // väljastame sisuga täidetud mall
-echo $mainTmpl->parsel();
+echo $mainTmpl->parse();
 // kontrollime $http objekti
 echo '<pre>';
 print_r($http->vars);

@@ -36,4 +36,4 @@ $link = $http->getLink(array('control'=> 'login'));
 $itemTmpl->set('link', $link);
 $menuTmpl->add('menu_items', $itemTmpl->parse());
 //paneme paika valmismenüü
-$mainTmpl->set('menu', $menuTmpl->parsel());
+$mainTmpl->set('menu', $menuTmpl->parse());

@@ -92,7 +92,7 @@ class template
 
     // malli elementide asendamine reaalväärtustega
     // vastavalt elementide nimedele
-    function parsel(){
+    function parse(){
         $str = $this->content; // sisu, mis ei ole veel asendatud
         foreach ($this->vars as $name=>$value){
             $str = str_replace('{'.$name.'}', $value, $str);
