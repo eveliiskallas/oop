@@ -8,5 +8,7 @@
 
 function fixUrl($str){
     return urlencode($str);
-
+}
+function fixDB($str){
+    return '"'.addslashes($str).'"';
 }
