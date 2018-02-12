@@ -15,6 +15,9 @@ $sql = 'SELECT * FROM user '.
 $result = $db->getData($sql);
 if($result !=false){
     //logime kasutaja sisse ja avame temale sessiooni
+    //...ja veel lahendamata
+    //suuname pealehele
+    $http->redirect();
 } else {
     //probleem sisselogimisega, suunatakse tagasi sisselogimisvormile
     $link = $http->getLink(array('control'=>'login'));
