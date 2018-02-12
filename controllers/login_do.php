@@ -13,6 +13,10 @@ $sql = 'SELECT * FROM user '.
     'WHERE username='.fixDB($username).
     'AND password='.fixDB(md5($password));
 $result = $db->getData($sql);
-echo '<pre>';
-print_r($result);
-echo '</pre>';
+if($result !=false){
+    //logime kasutaja sisse ja avame temale sessiooni
+} else {
+    //probleem sisselogimisega, suunatakse tagasi sisselogimisvormile
+    $link = $http->getLink(array('control'=>'login'));
+    $http->redirect($link);
+}
