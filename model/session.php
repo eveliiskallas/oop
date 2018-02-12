@@ -14,6 +14,8 @@ class session
     var $http = false; // otseühendus $http objektiga
     var $db = false; // otseühendus $db objektiga
 
+    var $timeout = 1800; // sessiooni pikkus -30 minutit
+
     /**
      * session constructor.
      * @param bool $http
