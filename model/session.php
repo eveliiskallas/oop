@@ -26,6 +26,32 @@ class session
     }
 
     // sessiooni loomine
+    function createSession($user = false){
+        // kui kasutaja on anonüümne
+        if($user == false){
+            // loome anonüümse kasutaja andmed
+            $user = array(
+                'user_id' => 0,
+                'role_id' => 0,
+                'username' => 'Anonüümne'
+            );
+        }
+        // loome sessiooni id
+        $sid = md5(uniqid(time().mt_rand(1, 1000), true));
+        //päring sessiooni andmete sisestamiseks andmjebaasi
+        $sql = 'INSERT INTO session SET'.
+            'sid='.fixDB($sid).', '.
+            'user_id='.fixDB($user['user_id']).', '.
+            'user_data='.fixDB(serialize($user)).', '.
+            'login_ip='.fixDB(REMOTE_ADDR).', '.
+            'created=NOW()';
+        // Saadame päring andmebaasi
+        $this->db->query($sql);
+        // määrame sessioonile loodud id
+        $this->sid = $sid;
+        // paneme antud väärtuse ka veebi andmete sisse
+        $this->http->set('sid', $sid);
+    }
 
 
 }
